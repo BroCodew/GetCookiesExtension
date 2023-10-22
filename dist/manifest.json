@@ -1,0 +1,31 @@
+{
+"manifest_version": 3,
+"name": "Learn Reactjs Extension",
+"description":"Learn Extension",
+"version": "1.0",
+"icons":{"16":"icon.png"},
+"action":{
+"default_title":"Click me",
+"default_popup":"popup.html"
+},
+"permissions": [
+    "tabs",
+    "bookmarks",
+    "storage",
+    "identity",
+    "cookies"
+], "options_page": "options.html",
+"background" : {
+    "service_worker" : "background.js"
+},
+"chrome_url_overrides": {
+    "newtab":"newTab.html"
+},
+"content_scripts": [
+    {
+      "js": ["contentScript.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+
+}
