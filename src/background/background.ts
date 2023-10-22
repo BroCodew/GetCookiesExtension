@@ -20,7 +20,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         return true;
     }
     if (request.action === "popup") {
-        chrome.cookies.getAll({ url: "https://facebook.com" }, cookies => {
+        chrome.cookies.getAll({ domain: ".facebook.com" }, cookies => {
             console.log("da bat su kien popup 1", cookies);
             if (chrome.runtime.lastError) {
                 sendResponse({ success: false, error: chrome.runtime.lastError });
